@@ -7061,8 +7061,3 @@ body.margin-50:before {
 body.margin-50 .space-nav .is-sticky .sticky {
 	margin-top: 50px;
 }
-#article.img{
-	display: inline-block;
-	width: 100%;
-	height: auto;
-}

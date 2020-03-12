@@ -1,26 +1,32 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    //获取动态路径 格式：   http://localhost:8080/book/
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/"+"pages"+"/";
+%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <base href="http://localhost:8080/book/pages/">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="M_Adnan">
+<%--    <meta name="description" content="">--%>
+<%--    <meta name="author" content="M_Adnan">--%>
     <link rel="icon" href="ico.ico">
+    <base href="<%=basePath%>">
     <title>百恩芯(测试)</title>
 
     <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-    <link rel="stylesheet" type="text/css" href="rs-plugin/rs-plugin/css/settings.css" media="screen" />
+<%--    <link rel="stylesheet" type="text/css" href="rs-plugin/rs-plugin/css/settings.css" media="screen" />--%>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/ionicons.min.css" rel="stylesheet">
+<%--    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">--%>
+<%--    <link href="css/ionicons.min.css" rel="stylesheet">--%>
     <link href="css/main.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
@@ -29,31 +35,30 @@
     <link rel="stylesheet" href="sass/common.css">
 
     <!-- COLORS -->
-    <link rel="stylesheet" id="color" href="css/default.css">
+<%--    <link rel="stylesheet" id="color" href="css/default.css">--%>
 
     <!-- JavaScripts -->
-    <script src="js/modernizr.js"></script>
+<%--    <script src="js/modernizr.js"></script>--%>
 
     <!--<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900,100' rel='stylesheet' type='text/css'>--->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+<%--    <!--[if lt IE 9]>--%>
+<%--    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>--%>
+<%--    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>--%>
+<%--<![endif]-->--%>
 
 </head>
 
 <body>
-
     <!-- Wrap -->
     <div id="wrap">
 
         <!-- header -->
         <header class="header-normal">
             <div class="sticky">
-               
+
                 <div class="container">
                     <!-- Logo -->
                     <!-- <div class="logo">
@@ -150,7 +155,6 @@
             </section>
 
 
-
             <section class="scale">
                 <div class="container">
                     <div class="row">
@@ -217,7 +221,6 @@
 
             <section class="technology padding-top-150 padding-bottom-150">
                 <div class="container">
-
                     <!-- Heading -->
                     <div class="heading text-center">
                         <h4 class="facts-title">
@@ -259,80 +262,72 @@
                                 </div>
                             </div>
                         </div>
-
+                      </div>
                     </div>
             </section>
 
-            <section class="product">
+        <section class="product">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="box">
+                            <div class="i_img i_img_ovuola">
+                                <img src="img/product1.png" alt="">
+                            </div>
+                            <div class="swiper-content">
+                                <div class="title">
+                                    文字文字文字文字
+                                </div>
+                                <div class="border"></div>
+                                <div class="content">
+                                    <div class="p">123456文字文字文字文字123456文字文字文字文字123456文字文字文字文字123456文字文字文字文字</div>
 
-                <!-- Swiper -->
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="box">
-                                <div class="i_img i_img_ovuola">
-                                    <img src="img/product1.png" alt="">
-                                </div>
-                                <div class="swiper-content">
-                                    <div class="title">
-                                        123456文字文字文字文字
-                                    </div>
-                                    <div class="border"></div>
-                                    <div class="content">
-                                        <div class="p">123456文字文字文字文字123456文字文字文字文字123456文字文字文字文字123456文字文字文字文字123456文字文字文字文字</div>
-                                        <div class="p">123456文字文字文字文字123456文字文字文字文字123456文字文字文字文字123456文字文字文字文字123456文字文字文字文字
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
-                            <img class="bottom-banner" src="img/bottom-banner1.jpg" alt="">
                         </div>
-                        <div class="swiper-slide">
-                            <div class="box">
-                                <div class="i_img i_img_spr">
-                                    <img src="img/spr2.png" alt="">
-                                </div>
-                                <div class="swiper-content">
-                                    <div class="title">
-                                        123456文字文字文字文字 123456文字文字文字文字 123456文字文字文字文字
-                                    </div>
-                                    <div class="border"></div>
-                                    <div class="content">
-                                        <div class="p">tarGate 123456文字文字文字文字</div>
-                                        <div class="p">123456文字文字文字文字</div>
-                                        <div class="p">123456文字文字文字文字(123456文字文字文字文字)123456文字文字文字文字</div>
-                                        <div class="p">123456文字文字文字文字</div>
-                                        <div class="p">123456文字文字文字文字</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img class="bottom-banner" src="img/bottom-banner2.jpg" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="box">
-                                <div class="i_img i_img_water">
-                                    <img src="img/water-logo.png" alt="">
-                                </div>
-                                <div class="swiper-content shuizhi">
-                                    <div class="title">
-                                        123456文字文字文字文字
-                                    </div>
-                                    <div class="border"></div>
-                                    <div class="content">
-                                        <div class="p">123456文字文字文字文字</div>
-                                        <div class="p">123456文字文字文字文字123456文字文字文字文字</div>
-                                        <div class="p">123456文字文字文字文字</div>
-                                        <div class="p">123456文字文字文123456文字文字文字文字字文字</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img class="bottom-banner" src="img/bottom-banner3.jpg" alt="">
-                        </div>
+                        <img class="bottom-banner" src="img/bottom-banner1.jpg" alt="">
                     </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide">
+                        <div class="box">
+                            <div class="i_img i_img_spr">
+                                <img src="img/spr2.png" alt="">
+                            </div>
+                            <div class="swiper-content">
+                                <div class="title">
+                                    123456文字文字文字文字
+                                </div>
+                                <div class="border"></div>
+                                <div class="content">
+                                    <div class="p">123456文字文字文字文字123456文字文字文字文字，</div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <img class="bottom-banner" src="img/bottom-banner2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="box">
+                            <div class="i_img i_img_water">
+                                <img src="img/water-logo.png" alt="">
+                            </div>
+                            <div class="swiper-content shuizhi">
+                                <div class="title">
+                                    水质检测物联网及云平台
+                                </div>
+                                <div class="border"></div>
+                                <div class="content">
+                                    <div class="p">123456文字文字文字文字123456文字文字文字文字123456文字文字文字文字</div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <img class="bottom-banner" src="img/bottom-banner3.jpg" alt="">
+                    </div>
                 </div>
-            </section>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
 
 
 
@@ -370,7 +365,7 @@
 
 
                         </div>
-                        
+
                     </div>
                 </div>
             </footer>
@@ -382,17 +377,17 @@
         <script src="js/own-menu.js"></script>
         <script src="js/jquery.lighter.js"></script>
         <script src="js/owl.carousel.min.js"></script>
-        <script src="js/color-switcher.js"></script>
+<%--        <script src="js/color-switcher.js"></script>--%>
         <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-        <script type="text/javascript" src="rs-plugin/rs-plugin/js/jquery.tp.t.min.js"></script>
-        <script type="text/javascript" src="rs-plugin/rs-plugin/js/jquery.tp.min.js"></script>
+<%--        <script type="text/javascript" src="rs-plugin/rs-plugin/js/jquery.tp.t.min.js"></script>--%>
+<%--        <script type="text/javascript" src="rs-plugin/rs-plugin/js/jquery.tp.min.js"></script>--%>
         <script src="js/main.js"></script>
         <script src="js/swiper.min.js"></script>
         <script>
             var swiper = new Swiper('.swiper-container', {
-                // autoplay: {
-                //     delay: 3000
-                // },
+                autoplay: {
+                    delay: 1000
+                },
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,

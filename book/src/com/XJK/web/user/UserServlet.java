@@ -29,7 +29,7 @@ public class UserServlet extends BaseServlet {
             response.sendRedirect("/book/admin/articleAdd.jsp");
         } else {
             //请求重定向
-            response.sendRedirect("/book/login.html");
+            response.sendRedirect("/book/login.jsp");
         }
     }
     //管理员登出
@@ -37,12 +37,10 @@ public class UserServlet extends BaseServlet {
 
         //失效session中当前用户的sessionId
         request.getSession().invalidate();
-        System.out.println(request.getSession().getAttribute("user"));
-
         //请求转发到登陆界面
         System.out.println("退出登陆成功");
         //请求重定向
-        response.sendRedirect("/book/login.html");
+        response.sendRedirect("/book/login.jsp");
     }
     //用户注册
     protected void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -55,16 +53,16 @@ public class UserServlet extends BaseServlet {
         if (password.equals(pwd)){
             if (userService.existUsername(username)){  //用户名已存在
                 //跳转回注册页面
-                request.getRequestDispatcher("/regist.html").forward(request,response);
+                request.getRequestDispatcher("/regist.jsp").forward(request,response);
             } else {
                 //注册
                 userService.registerUser(new User(null,username,password,email));
                 //跳转回注册成功页面
                 response.addHeader("Cache-Control", "no-store, must-revalidate");
-                request.getRequestDispatcher("/registSucc.html").forward(request,response);
+                request.getRequestDispatcher("/registSucc.jsp").forward(request,response);
             }
         } else {  //密码不一致,跳回注册页面
-            request.getRequestDispatcher("/regist.html").forward(request,response);
+            request.getRequestDispatcher("/regist.jsp").forward(request,response);
         }
     }
 

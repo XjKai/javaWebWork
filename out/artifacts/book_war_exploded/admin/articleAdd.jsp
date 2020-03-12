@@ -16,9 +16,13 @@
     ArticleService articleService =new ArticleServiceImpl();
     List<Article> articleList = articleService.getAllArticle();
     String username = (String) request.getSession().getAttribute("user");
-%>
-<base href="http://localhost:8080/book/">
 
+    //获取动态路径 格式：   http://localhost:8080/book/
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    System.out.println(basePath); 
+%>
+<base href="<%=basePath%>">
 <!DOCTYPE html>
 <html>
 <head>

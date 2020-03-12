@@ -7,17 +7,21 @@
   ArticleService articleService =new ArticleServiceImpl();
   List<Article> articleList = articleService.getAllArticle();
 %>
+
+<%
+  //获取动态路径 格式：   http://localhost:8080/book/
+  String path = request.getContextPath();
+  String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/"+"pages"+"/";
+%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <base href="http://localhost:8080/book/pages/">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="M_Adnan">
   <link rel="icon" href="ico.ico">
+  <base href="<%=basePath%>">
   <title>百恩芯(测试)</title>
 
   <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->

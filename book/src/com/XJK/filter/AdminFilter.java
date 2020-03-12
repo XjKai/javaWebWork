@@ -21,7 +21,7 @@ public class AdminFilter implements Filter {
         Object user = session.getAttribute("user");
         if (user == null) {
             //请求重定向
-            ((HttpServletResponse)servletResponse).sendRedirect("/book/login.html");
+            ((HttpServletResponse)servletResponse).sendRedirect("/book/login.jsp");
             return;
         } else {
             filterChain.doFilter(servletRequest,servletResponse);
